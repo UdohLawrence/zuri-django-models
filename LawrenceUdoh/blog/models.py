@@ -6,7 +6,7 @@ class Post(models.Model):
 
   Text = models.TextField()
 
-  Author = django.contrib.auth.models.get_user_model()
+  Author = contrib.auth.models.get_user_model()
 
   Created_date = models.DateTimeField(auto_now_add=True)
 
