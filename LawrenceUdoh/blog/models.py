@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 class Post(models.Model):
@@ -6,7 +9,7 @@ class Post(models.Model):
 
   Text = models.TextField()
 
-  Author = contrib.auth.models.get_user_model()
+  Author = models.ForeignKey(User, on_delete=models.CASCADE)
 
   Created_date = models.DateTimeField(auto_now_add=True)
 
